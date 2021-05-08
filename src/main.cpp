@@ -1,6 +1,4 @@
 #include <iostream>
-#include <vector>
-
 
 const int n = 2;
 
@@ -23,14 +21,14 @@ void print(int (&arr)[n][n], int n){
 
 int equalityCheck(int (&arr_1)[n][n], int (&arr_2)[n][n]){
   for(int i = 0; i < n; i++){
-      for(int j = 0; j < n; j++){
+    for(int j = 0; j < n; j++){
         if(arr_1[i][j] == arr_2[i][j]){
           return true;
         }else {
           return false;
         }
-      }
     }
+  }
 }
 
 int main(){
