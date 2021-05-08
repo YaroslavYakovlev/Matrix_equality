@@ -21,6 +21,18 @@ void print(int (&arr)[n][n], int n){
   }
 }
 
+int equalityCheck(int (&arr_1)[n][n], int (&arr_2)[n][n]){
+  for(int i = 0; i < n; i++){
+      for(int j = 0; j < n; j++){
+        if(arr_1[i][j] == arr_2[i][j]){
+          return true;
+        }else {
+          return false;
+        }
+      }
+    }
+}
+
 int main(){
   std::cout << "Matrix_equality" << std::endl;
   int arr_1[n][n];
@@ -37,19 +49,12 @@ int main(){
   std::cout << std::endl;  
   print(arr_2, n);
 
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < n; j++){
-      if(arr_1[i][j] == arr_2[i][j]){
-        std::cout << "Arrays are equal" << std::endl;
-        break;
-      }else {
-        std::cout << "Arrays are not equal" << std::endl;
-        break;
-      }
-    }
+  if(equalityCheck(arr_1, arr_2)){
+    std::cout << "Arrays are equal" << std::endl;
+  }else{
+    std::cout << "Arrays are not equal" << std::endl;
   }
-
-  
+    
   return 0;
 }
 
