@@ -1,6 +1,6 @@
 #include <iostream>
 
-const int n = 2;
+const int n = 4;
 
 void fillingArray(int (&arr)[n][n], int n){
   for(int i = 0; i < n; i++){
