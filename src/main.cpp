@@ -1,6 +1,6 @@
 #include <iostream>
 
-const int n = 4;
+const int n = 5;
 
 void fillingArray(int (&arr)[n][n], int n){
   for(int i = 0; i < n; i++){
@@ -16,18 +16,6 @@ void print(int (&arr)[n][n], int n){
       std::cout << arr[i][j] << " ";
     }
     std::cout << std::endl;
-  }
-}
-
-int equalityCheck(int (&arr_1)[n][n], int (&arr_2)[n][n]){
-  for(int i = 0; i < n; i++){
-    for(int j = 0; j < n; j++){
-        if(arr_1[i][j] == arr_2[i][j]){
-          return true;
-        }else {
-          return false;
-        }
-    }
   }
 }
 
@@ -47,12 +35,22 @@ int main(){
   std::cout << std::endl;  
   print(arr_2, n);
 
-  if(equalityCheck(arr_1, arr_2)){
-    std::cout << "Arrays are equal" << std::endl;
-  }else{
-    std::cout << "Arrays are not equal" << std::endl;
+  int count = 1;
+  int size = n*n;
+
+for(int i = 0; i < n; i++){
+  for(int j = 0; j < n; j++){
+    if(arr_1[i][j] == arr_2[i][j]){
+      count++;
+    }else{
+      std::cout << "Arrays are not equal" << std::endl;
+      return 1;
+    }
+    if(count == size) {
+      std::cout << "Arrays are equal" << std::endl;
+    }
   }
-    
+}
   return 0;
 }
 
